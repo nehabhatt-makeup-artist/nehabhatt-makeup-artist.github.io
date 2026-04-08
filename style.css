@@ -1,42 +1,74 @@
 :root {
-    --gold: #c5a059;
-    --dark: #121212;
-    --cream: #faf7f2;
+    --gold: #d4af37;
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --gray: #1a1a1a;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', sans-serif; background: white; overflow-x: hidden; }
+body { 
+    background-color: var(--bg); 
+    color: var(--text); 
+    font-family: 'Montserrat', sans-serif; 
+    letter-spacing: 1px;
+}
 
-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-.logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; letter-spacing: 3px; font-weight: 700; }
-.nav-links a { text-decoration: none; color: var(--dark); margin-left: 25px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-.book-btn { background: var(--dark); color: white !important; padding: 10px 20px; }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background: var(--bg);
+}
 
-.hero { height: 40vh; background: var(--cream); display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
-.subtitle { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; margin-bottom: 10px; }
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+}
 
-/* Horizontal Slide Bar */
-.slider-section { padding: 40px 0; background: #fff; }
-.section-title { text-align: center; font-family: 'Playfair Display', serif; margin-bottom: 30px; font-size: 1.8rem; }
-.slider-container { display: flex; overflow-x: auto; gap: 15px; padding: 20px 8%; scrollbar-width: none; } /* Hide scrollbar for clean look */
-.slider-container::-webkit-scrollbar { display: none; }
-.slide { flex: 0 0 250px; height: 180px; overflow: hidden; border-radius: 8px; }
-.slide img { width: 100%; height: 100%; object-fit: cover; }
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
 
-/* Portfolio Gallery (Smaller images) */
-.portfolio { padding: 60px 8%; }
-.masonry-grid { column-count: 3; column-gap: 15px; }
-.item { margin-bottom: 15px; break-inside: avoid; }
-.item img { width: 100%; border-radius: 4px; transition: 0.3s; }
-.item:hover img { filter: brightness(80%); }
-.cert { border: 1px solid #ddd; }
+.cta { border: 1px solid var(--gold); padding: 8px 20px; color: var(--gold) !important; }
 
-footer { padding: 80px 8%; background: var(--dark); color: white; text-align: center; }
-.whatsapp-cta { display: inline-block; margin-top: 20px; padding: 12px 30px; background: var(--gold); color: white; text-decoration: none; border-radius: 2px; }
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--gray);
+}
 
-/* Mobile View */
+.hero h1 { font-family: 'Cinzel', serif; font-size: 3.5rem; margin: 20px 0; }
+.hero p { color: var(--gold); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 5px; }
+.line { width: 50px; height: 2px; background: var(--gold); margin: 0 auto; }
+
+.about { padding: 100px 10%; text-align: center; }
+.about h2 { font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 20px; color: var(--gold); }
+.about p { max-width: 600px; margin: 0 auto; opacity: 0.8; line-height: 1.8; }
+
+.gallery { padding: 50px 10%; }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card { height: 400px; overflow: hidden; background: var(--gray); }
+.card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.card:hover img { transform: scale(1.05); filter: grayscale(50%); }
+
+footer { padding: 50px; text-align: center; background: #000; font-size: 0.7rem; border-top: 1px solid var(--gray); }
+footer a { display: block; color: var(--gold); text-decoration: none; margin-top: 10px; font-size: 1rem; }
+
 @media (max-width: 768px) {
-    .masonry-grid { column-count: 2; }
-    .slide { flex: 0 0 180px; height: 130px; }
+    .hero h1 { font-size: 2rem; }
+    .nav-links { display: none; }
 }
