@@ -15,7 +15,8 @@
         .slider-wrapper { display: flex; width: 100%; height: 100%; transition: transform 0.5s ease-in-out; }
         .slider-wrapper img { min-width: 100%; height: 100%; object-fit: cover; }
 
-        .btn { display: inline-block; background: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold; }
+        .btn { display: inline-block; background: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold; width: 80%; }
+        .insta-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); margin-top: 10px; }
         .tip { font-size: 11px; color: #999; margin-top: 10px; }
         .cert-img { width: 100%; border-radius: 6px; margin-top: 10px; border: 1px solid #ddd; }
         .footer-credit { text-align: center; color: #555; font-size: 12px; margin-top: 20px; letter-spacing: 1px; }
@@ -26,9 +27,15 @@
     <div class="container">
         <h1 class="logo">NEHA BHATT</h1>
 
+        <!-- BIO SECTION -->
         <div class="card">
             <h2>About Me</h2>
-            <p>Certified Professional Makeup Artist based in <strong>Dehradun</strong>. Specializing in Bridal, Engagement, and Party Artistry. Trained at <strong>Orane International</strong>.</p>
+            <p style="line-height: 1.8;">
+                Dehradun based makeup artist<br>
+                Certified makeup artist (@oraneinternational)<br>
+                Freelancer (Bridal, Engagement, Party makeup)<br>
+                Experience: 1 year
+            </p>
         </div>
 
         <!-- SECTION: EYE WORK -->
@@ -43,43 +50,57 @@
             <p class="tip">Tap photo to see next</p>
         </div>
 
-        <!-- SECTION: BRIDAL WORK (CLEANED VERSION) -->
+        <!-- SECTION: BRIDAL WORK -->
         <div class="card">
             <h2>My Bridal Work</h2>
-            <div class="slider-container" onclick="nextSlide('bridalWrap', 9, 'bridal')">
+            <div class="slider-container" onclick="nextSlide('bridalWrap', 3, 'bridal')">
                 <div class="slider-wrapper" id="bridalWrap">
-                    <!-- Only Bridal and Fullpics remain -->
                     <img src="facework1.jpeg"><img src="facework2.jpeg"><img src="facework3.jpeg">
-                    <img src="facework12traditional.jpeg"><img src="facework13traditional.jpeg">
-                    <img src="fullpic2.jpeg"><img src="fullpic3.jpeg"><img src="fullpic4.jpeg">
-                    <img src="fullpic5.jpeg"><img src="fullpic6.jpeg"><img src="fullpick.jpeg">
                 </div>
             </div>
             <p class="tip">Tap photo to see next</p>
         </div>
 
+        <!-- SECTION: PARTY WORK (Moved Photos) -->
+        <div class="card">
+            <h2>Party Artistry</h2>
+            <div class="slider-container" onclick="nextSlide('partyWrap', 11, 'party')">
+                <div class="slider-wrapper" id="partyWrap">
+                    <img src="facework10.jpeg"><img src="facework11.jpeg"><img src="facework14.jpeg">
+                    <img src="facework4mirrorphoto.jpeg"><img src="facework7.jpeg"><img src="facework8.jpeg">
+                    <img src="fullpic2.jpeg"><img src="fullpic3.jpeg"><img src="fullpic4.jpeg">
+                    <img src="fullpic5.jpeg"><img src="fullpic6.jpeg">
+                </div>
+            </div>
+            <p class="tip">Tap photo to see next</p>
+        </div>
+
+        <!-- CERTIFICATION SECTION -->
         <div class="card">
             <h2>Certification</h2>
             <img src="certificate.jpeg" class="cert-img">
         </div>
 
+        <!-- CONTACT & INSTAGRAM LINK -->
         <div class="card">
-            <h2>Contact</h2>
+            <h2>Contact & Bookings</h2>
             <p>📍 Dehradun, Uttarakhand<br>📞 +91 91934 96953</p>
             <a href="https://wa.me" class="btn">WhatsApp Booking</a>
+            <a href="https://www.instagram.com/nehabhatt_____5?igsh=MWszYWdhOWs0em5uaw==" class="btn insta-btn">Follow on Instagram</a>
         </div>
 
         <p class="footer-credit">Created by Shivankar</p>
     </div>
 
     <script>
-        let pos = { eye: 0, bridal: 0 };
+        let pos = { eye: 0, bridal: 0, party: 0 };
         function nextSlide(id, total, key) {
             pos[key] = (pos[key] + 1) % total;
             document.getElementById(id).style.transform = `translateX(-${pos[key] * 100}%)`;
         }
         setInterval(() => nextSlide('eyeWrap', 7, 'eye'), 5000);
-        setInterval(() => nextSlide('bridalWrap', 9, 'bridal'), 4500);
+        setInterval(() => nextSlide('bridalWrap', 3, 'bridal'), 4000);
+        setInterval(() => nextSlide('partyWrap', 11, 'party'), 4500);
     </script>
 </body>
 </html>
