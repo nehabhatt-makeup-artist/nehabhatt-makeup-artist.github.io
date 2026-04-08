@@ -7,38 +7,22 @@
     <style>
         body { background-color: #0f0f0f; color: #333; font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 20px; }
         .container { width: 100%; max-width: 500px; }
-        .logo { color: #c5a059; text-align: center; margin: 40px 0; letter-spacing: 3px; font-size: 24px; font-weight: bold; }
+        .logo { color: #c5a059; text-align: center; margin: 40px 0; letter-spacing: 3px; font-size: 26px; font-weight: bold; }
         .card { background: white; border-radius: 15px; padding: 25px; margin-bottom: 25px; text-align: center; border-left: 5px solid red; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
         h2 { margin-bottom: 15px; color: #000; font-size: 18px; text-transform: uppercase; }
         
-        /* THE FIXED TAP SLIDER */
         .slider-container {
-            width: 100%;
-            max-width: 320px; 
-            height: 250px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 10px;
-            position: relative;
-            cursor: pointer;
-            border: 1px solid #ddd;
+            width: 100%; max-width: 320px; height: 280px; margin: 0 auto;
+            overflow: hidden; border-radius: 10px; position: relative;
+            cursor: pointer; border: 1px solid #ddd; background: #eee;
         }
 
-        .slider-wrapper {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease-in-out; 
-        }
-
-        .slider-wrapper img {
-            min-width: 100%; 
-            height: 100%;
-            object-fit: cover;
-        }
+        .slider-wrapper { display: flex; width: 100%; height: 100%; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
+        .slider-wrapper img { min-width: 100%; height: 100%; object-fit: cover; }
 
         .btn { display: inline-block; background: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
-        p.tip { font-size: 11px; color: #888; margin-top: 10px; }
+        .tip { font-size: 11px; color: #888; margin-top: 10px; }
+        .cert-img { width: 100%; border-radius: 5px; border: 1px solid #ddd; }
     </style>
 </head>
 <body>
@@ -48,49 +32,64 @@
 
         <div class="card">
             <h2>About Me</h2>
-            <p>Certified Professional Makeup Artist based in Dehradun. Specialized in Bridal and Party makeup.</p>
+            <p>Certified Professional Makeup Artist based in Dehradun. Specialized in Bridal, Engagement, and Party makeup. Trained at <strong>Orane International</strong>.</p>
         </div>
 
-        <!-- UPDATED HEADING: MY EYE WORK -->
+        <!-- SECTION 1: EYE WORK -->
         <div class="card">
             <h2>My Eye Work</h2>
-            <div class="slider-container" id="slider" onclick="nextSlide()">
-                <div class="slider-wrapper" id="wrapper">
-                    <img src="eyework1.jpeg">
-                    <img src="eyework2.jpeg">
-                    <img src="eyework3.jpeg">
-                    <img src="eyework4.jpeg">
-                    <img src="eyework5.jpeg">
-                    <img src="eyework6.jpeg">
-                    <img src="eyework7.jpeg">
+            <div class="slider-container" onclick="nextSlide('eyeWrapper', 7, 'eye')">
+                <div class="slider-wrapper" id="eyeWrapper">
+                    <img src="eyework1.jpeg"><img src="eyework2.jpeg"><img src="eyework3.jpeg">
+                    <img src="eyework4.jpeg"><img src="eyework5.jpeg"><img src="eyework6.jpeg"><img src="eyework7.jpeg">
                 </div>
             </div>
-            <p class="tip">Slides automatically • Tap photo to see next</p>
+            <p class="tip">Tap photo to see next</p>
+        </div>
+
+        <!-- SECTION 2: BRIDAL & FULL WORK (SFX EXCLUDED) -->
+        <div class="card">
+            <h2>My Bridal Work</h2>
+            <div class="slider-container" onclick="nextSlide('bridalWrapper', 16, 'bridal')">
+                <div class="slider-wrapper" id="bridalWrapper">
+                    <!-- Face Work Files -->
+                    <img src="facework1.jpeg"><img src="facework2.jpeg"><img src="facework3.jpeg">
+                    <img src="facework4mirrorphoto.jpeg"><img src="facework5mirrorphoto.jpeg">
+                    <img src="facework7.jpeg"><img src="facework8.jpeg"><img src="facework10.jpeg">
+                    <img src="facework11.jpeg"><img src="facework12traditional.jpeg">
+                    <img src="facework13traditional.jpeg"><img src="facework14.jpeg">
+                    <!-- Full Pic Files -->
+                    <img src="fulpic2.jpeg"><img src="fulpic3.jpeg"><img src="fulpic4.jpeg">
+                    <img src="fulpic5.jpeg"><img src="fulpic6.jpeg"><img src="fulpick.jpeg">
+                </div>
+            </div>
+            <p class="tip">Tap photo to see next</p>
+        </div>
+
+        <div class="card">
+            <h2>Certification</h2>
+            <img src="certificate.jpeg" class="cert-img">
         </div>
 
         <div class="card">
             <h2>Contact</h2>
             <p>Dehradun, Uttarakhand</p>
             <p>Phone: +91 91934 96953</p>
-            <a href="https://wa.me" class="btn">WhatsApp Me</a>
+            <a href="https://wa.me" class="btn">WhatsApp Booking</a>
         </div>
     </div>
 
     <script>
-        let index = 0;
-        const wrapper = document.getElementById('wrapper');
-        const totalImages = 7;
+        let indices = { eye: 0, bridal: 0 };
 
-        function showSlide() {
-            wrapper.style.transform = `translateX(-${index * 100}%)`;
+        function nextSlide(wrapperId, total, key) {
+            indices[key] = (indices[key] + 1) % total;
+            document.getElementById(wrapperId).style.transform = `translateX(-${indices[key] * 100}%)`;
         }
 
-        function nextSlide() {
-            index = (index + 1) % totalImages;
-            showSlide();
-        }
-
-        setInterval(nextSlide, 4000);
+        // Automatic slow slide
+        setInterval(() => nextSlide('eyeWrapper', 7, 'eye'), 5000);
+        setInterval(() => nextSlide('bridalWrapper', 18, 'bridal'), 4000);
     </script>
 </body>
 </html>
