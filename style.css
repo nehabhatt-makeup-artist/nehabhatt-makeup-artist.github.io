@@ -17,6 +17,7 @@ body {
     background-color: var(--soft-white);
     color: var(--black);
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* Navigation */
@@ -24,7 +25,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 10%;
+    padding: 1.5rem 10%;
     background: white;
     position: sticky;
     top: 0;
@@ -58,11 +59,11 @@ nav {
     color: var(--gold);
 }
 
-/* Hero Section */
+/* Hero Section - Using your actual image */
 .hero {
     height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                url('https://unsplash.com'); /* Temporary background */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('facework12traditional.jpeg'); /* Changed to your uploaded file */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -74,7 +75,7 @@ nav {
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive size */
     margin-bottom: 1rem;
 }
 
@@ -87,10 +88,13 @@ nav {
     margin-top: 2rem;
     transition: 0.4s;
     border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    background: var(--black);
+    background: white;
+    color: var(--black);
 }
 
 /* Gallery Section */
@@ -103,25 +107,36 @@ nav {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 10px auto;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .gallery-item {
     overflow: hidden;
     height: 450px;
-    background: #eee; /* Placeholder color */
+    background: #eee;
+    border-radius: 4px;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s ease;
+    transition: transform 0.8s ease;
 }
 
 .gallery-item:hover img {
@@ -133,16 +148,34 @@ footer {
     background: var(--black);
     color: white;
     text-align: center;
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 footer h2 {
     font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    margin-bottom: 2rem;
 }
 
 .social-links a {
     color: var(--gold);
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-size: 1.1rem;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    nav { padding: 1rem 5%; }
+    .nav-links { display: none; } /* Standard for mobile simplicity */
+    .hero { height: 60vh; }
+    .gallery-section { padding: 3rem 5%; }
 }
