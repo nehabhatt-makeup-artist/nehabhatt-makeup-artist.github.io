@@ -11,10 +11,46 @@
         .card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; text-align: center; border-left: 5px solid red; }
         h2 { margin-bottom: 15px; color: #000; font-size: 18px; text-transform: uppercase; }
         
-        /* Image Styling */
-        .work-grid { display: flex; flex-direction: column; gap: 15px; }
-        .work-grid img { width: 100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        
+        /* THE SLIDESHOW FIX */
+        .slideshow-container {
+            width: 100%;
+            height: 300px; /* One photo space */
+            overflow: hidden; /* Hides the other images */
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            width: 700%; /* 7 images x 100% */
+            animation: slide 20s infinite; /* Automatic sliding */
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover; /* Keeps images professional and not stretched */
+        }
+
+        /* Animation logic for 7 images */
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            10% { transform: translateX(0%); }
+            14% { transform: translateX(-14.28%); }
+            24% { transform: translateX(-14.28%); }
+            28% { transform: translateX(-28.57%); }
+            38% { transform: translateX(-28.57%); }
+            42% { transform: translateX(-42.85%); }
+            52% { transform: translateX(-42.85%); }
+            56% { transform: translateX(-57.14%); }
+            66% { transform: translateX(-57.14%); }
+            70% { transform: translateX(-71.42%); }
+            80% { transform: translateX(-71.42%); }
+            84% { transform: translateX(-85.71%); }
+            94% { transform: translateX(-85.71%); }
+            100% { transform: translateX(0%); }
+        }
+
         .btn { display: inline-block; background: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
     </style>
 </head>
@@ -23,27 +59,28 @@
     <div class="container">
         <h1 class="logo">NEHA BHATT</h1>
 
-        <!-- ABOUT SECTION -->
         <div class="card">
             <h2>About Me</h2>
             <p>Certified Professional Makeup Artist based in Dehradun. Specialized in Bridal and Party makeup.</p>
         </div>
 
-        <!-- EYE WORK SECTION FIRST -->
+        <!-- EYE WORK SLIDESHOW -->
         <div class="card">
-            <h2>Eye Artistry</h2>
-            <div class="work-grid">
-                <img src="eyework1.jpeg" alt="Eye Makeup 1">
-                <img src="eyework2.jpeg" alt="Eye Makeup 2">
-                <img src="eyework3.jpeg" alt="Eye Makeup 3">
-                <img src="eyework4.jpeg" alt="Eye Makeup 4">
-                <img src="eyework5.jpeg" alt="Eye Makeup 5">
-                <img src="eyework6.jpeg" alt="Eye Makeup 6">
-                <img src="eyework7.jpeg" alt="Eye Makeup 7">
+            <h2>My Work</h2>
+            <div class="slideshow-container">
+                <div class="slider-wrapper">
+                    <img src="eyework1.jpeg">
+                    <img src="eyework2.jpeg">
+                    <img src="eyework3.jpeg">
+                    <img src="eyework4.jpeg">
+                    <img src="eyework5.jpeg">
+                    <img src="eyework6.jpeg">
+                    <img src="eyework7.jpeg">
+                </div>
             </div>
+            <p style="margin-top: 10px; font-size: 12px; color: #888;">Slide automatic • Tap to pause</p>
         </div>
 
-        <!-- CONTACT SECTION -->
         <div class="card">
             <h2>Contact</h2>
             <p>Dehradun, Uttarakhand</p>
