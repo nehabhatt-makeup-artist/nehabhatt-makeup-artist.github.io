@@ -5,44 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neha Bhatt Artistry</title>
     <style>
-        /* Design is included here so you don't need a separate CSS file */
-        body { 
-            background-color: #0f0f0f; 
-            color: #333; 
-            font-family: Arial, sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            padding: 20px; 
-        }
+        body { background-color: #0f0f0f; color: #333; font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 20px; }
         .container { width: 100%; max-width: 500px; }
-        .logo { color: #c5a059; text-align: center; margin: 40px 0; letter-spacing: 3px; }
-        .card { 
-            background: white; 
-            border-radius: 10px; 
-            padding: 25px; 
-            margin-bottom: 20px; 
-            text-align: center; 
-            border-left: 5px solid red; 
-        }
-        h2 { margin-bottom: 10px; color: #000; }
-        .btn { 
-            display: inline-block; 
-            background: #25D366; 
-            color: white; 
-            padding: 10px 20px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            margin-top: 10px; 
-        }
-        .placeholder { 
-            height: 150px; 
-            background: #f0f0f0; 
-            border: 2px dashed #ccc; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #888; 
-        }
+        .logo { color: #c5a059; text-align: center; margin: 40px 0; letter-spacing: 3px; font-size: 24px; }
+        .card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; text-align: center; border-left: 5px solid red; }
+        h2 { margin-bottom: 15px; color: #000; font-size: 18px; text-transform: uppercase; }
+        
+        /* Image Styling */
+        .work-grid { display: flex; flex-direction: column; gap: 15px; }
+        .work-grid img { width: 100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        .btn { display: inline-block; background: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -50,16 +23,27 @@
     <div class="container">
         <h1 class="logo">NEHA BHATT</h1>
 
+        <!-- ABOUT SECTION -->
         <div class="card">
             <h2>About Me</h2>
             <p>Certified Professional Makeup Artist based in Dehradun. Specialized in Bridal and Party makeup.</p>
         </div>
 
+        <!-- EYE WORK SECTION FIRST -->
         <div class="card">
-            <h2>My Work</h2>
-            <div class="placeholder">Photos Coming Soon</div>
+            <h2>Eye Artistry</h2>
+            <div class="work-grid">
+                <img src="eyework1.jpeg" alt="Eye Makeup 1">
+                <img src="eyework2.jpeg" alt="Eye Makeup 2">
+                <img src="eyework3.jpeg" alt="Eye Makeup 3">
+                <img src="eyework4.jpeg" alt="Eye Makeup 4">
+                <img src="eyework5.jpeg" alt="Eye Makeup 5">
+                <img src="eyework6.jpeg" alt="Eye Makeup 6">
+                <img src="eyework7.jpeg" alt="Eye Makeup 7">
+            </div>
         </div>
 
+        <!-- CONTACT SECTION -->
         <div class="card">
             <h2>Contact</h2>
             <p>Dehradun, Uttarakhand</p>
