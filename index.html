@@ -11,44 +11,47 @@
         .card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; text-align: center; border-left: 5px solid red; }
         h2 { margin-bottom: 15px; color: #000; font-size: 18px; text-transform: uppercase; }
         
-        /* THE SLIDESHOW FIX */
+        /* THE FIXED SLIDESHOW */
         .slideshow-container {
             width: 100%;
-            height: 300px; /* One photo space */
-            overflow: hidden; /* Hides the other images */
-            border-radius: 5px;
+            max-width: 300px; /* Makes the photo container smaller */
+            height: 250px;    /* Smaller height for professional look */
+            overflow: hidden; 
+            border-radius: 8px;
             position: relative;
+            margin: 0 auto;   /* Centers the photo box */
+            border: 1px solid #ddd;
         }
 
         .slider-wrapper {
             display: flex;
-            width: 700%; /* 7 images x 100% */
-            animation: slide 20s infinite; /* Automatic sliding */
+            width: 700%; /* Total images (7) */
+            animation: slide-fixed 20s infinite ease-in-out;
         }
 
         .slider-wrapper img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover; /* Keeps images professional and not stretched */
+            width: 14.285%; /* 100 divided by 7 images = 14.285% each */
+            height: 250px;
+            object-fit: cover; /* Centers the focus of the photo */
         }
 
-        /* Animation logic for 7 images */
-        @keyframes slide {
-            0% { transform: translateX(0%); }
-            10% { transform: translateX(0%); }
-            14% { transform: translateX(-14.28%); }
-            24% { transform: translateX(-14.28%); }
-            28% { transform: translateX(-28.57%); }
-            38% { transform: translateX(-28.57%); }
-            42% { transform: translateX(-42.85%); }
-            52% { transform: translateX(-42.85%); }
-            56% { transform: translateX(-57.14%); }
-            66% { transform: translateX(-57.14%); }
-            70% { transform: translateX(-71.42%); }
-            80% { transform: translateX(-71.42%); }
-            84% { transform: translateX(-85.71%); }
-            94% { transform: translateX(-85.71%); }
-            100% { transform: translateX(0%); }
+        /* Fixed Math: Each step is exactly -14.28% */
+        @keyframes slide-fixed {
+            0%   { transform: translateX(0); }
+            12%  { transform: translateX(0); }
+            14%  { transform: translateX(-14.28%); }
+            26%  { transform: translateX(-14.28%); }
+            28%  { transform: translateX(-28.57%); }
+            40%  { transform: translateX(-28.57%); }
+            42%  { transform: translateX(-42.85%); }
+            54%  { transform: translateX(-42.85%); }
+            56%  { transform: translateX(-57.14%); }
+            68%  { transform: translateX(-57.14%); }
+            70%  { transform: translateX(-71.42%); }
+            82%  { transform: translateX(-71.42%); }
+            84%  { transform: translateX(-85.71%); }
+            98%  { transform: translateX(-85.71%); }
+            100% { transform: translateX(0); }
         }
 
         .btn { display: inline-block; background: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
@@ -61,14 +64,14 @@
 
         <div class="card">
             <h2>About Me</h2>
-            <p>Certified Professional Makeup Artist based in Dehradun. Specialized in Bridal and Party makeup.</p>
+            <p>Certified Professional Makeup Artist based in Dehradun. Trained at Orane International.</p>
         </div>
 
-        <!-- EYE WORK SLIDESHOW -->
         <div class="card">
             <h2>My Work</h2>
             <div class="slideshow-container">
                 <div class="slider-wrapper">
+                    <!-- Images listed here -->
                     <img src="eyework1.jpeg">
                     <img src="eyework2.jpeg">
                     <img src="eyework3.jpeg">
@@ -78,7 +81,7 @@
                     <img src="eyework7.jpeg">
                 </div>
             </div>
-            <p style="margin-top: 10px; font-size: 12px; color: #888;">Slide automatic • Tap to pause</p>
+            <p style="margin-top: 10px; font-size: 11px; color: #888;">Slide automatic • Tap to pause</p>
         </div>
 
         <div class="card">
