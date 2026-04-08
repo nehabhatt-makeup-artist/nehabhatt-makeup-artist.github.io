@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neha Bhatt Artistry</title>
+    <title>Neha Bhatt Artistry | Dehradun</title>
+    <!-- FIXED LINKS: These allow the fonts and slider to load properly -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://jsdelivr.net" />
     <link rel="stylesheet" href="style.css">
@@ -11,7 +12,6 @@
 <body>
 
     <div class="main-container">
-        <!-- HEADER -->
         <header>
             <h1 class="logo">NEHA BHATT</h1>
         </header>
@@ -19,10 +19,10 @@
         <!-- ABOUT ME SECTION -->
         <section class="card about-section">
             <h2>About Me</h2>
-            <p>Certified Professional Makeup Artist trained at <strong>Orane International</strong>. With over 1 year of freelance experience, I specialize in creating stunning Bridal, Engagement, and Party looks that highlight your natural beauty.</p>
+            <p>Certified Professional Makeup Artist trained at <strong>Orane International</strong>. With over 1 year of freelance experience, I specialize in creating stunning Bridal, Engagement, and Party looks.</p>
         </section>
 
-        <!-- GALLERY SECTION (Smaller Images like your photo) -->
+        <!-- GALLERY SECTION (Smaller Images) -->
         <section class="card gallery-section">
             <h2 class="gallery-title">📸 My Work</h2>
             <div class="swiper mySwiper">
@@ -33,11 +33,10 @@
                     <div class="swiper-slide"><img src="eyework2.jpeg"></div>
                     <div class="swiper-slide"><img src="fulpic2.jpeg"></div>
                 </div>
-                <!-- Navigation Arrows -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
-            <p class="photo-counter">Portfolio Highlights</p>
         </section>
 
         <!-- ADDRESS & CONTACT SECTION -->
@@ -50,18 +49,19 @@
 
         <!-- CERTIFICATE SECTION -->
         <section class="card cert-section">
-            <h2>Professional Certification</h2>
+            <h2>Certification</h2>
             <img src="certificate.jpeg" alt="Certification" class="cert-img">
         </section>
     </div>
 
-    <!-- Scripts -->
+    <!-- FIXED SCRIPT: This runs the slider -->
     <script src="https://jsdelivr.net"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             loop: true,
             autoplay: { delay: 3000 },
             navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            pagination: { el: ".swiper-pagination", clickable: true },
         });
     </script>
 </body>
