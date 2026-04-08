@@ -18,6 +18,7 @@
         .btn { display: inline-block; background: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold; }
         .tip { font-size: 11px; color: #999; margin-top: 10px; }
         .cert-img { width: 100%; border-radius: 6px; margin-top: 10px; border: 1px solid #ddd; }
+        .footer-credit { text-align: center; color: #555; font-size: 12px; margin-top: 20px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -30,6 +31,7 @@
             <p>Certified Professional Makeup Artist based in <strong>Dehradun</strong>. Specializing in Bridal, Engagement, and Party Artistry. Trained at <strong>Orane International</strong>.</p>
         </div>
 
+        <!-- SECTION: EYE WORK -->
         <div class="card">
             <h2>My Eye Work</h2>
             <div class="slider-container" onclick="nextSlide('eyeWrap', 7, 'eye')">
@@ -41,16 +43,14 @@
             <p class="tip">Tap photo to see next</p>
         </div>
 
+        <!-- SECTION: BRIDAL WORK (CLEANED VERSION) -->
         <div class="card">
             <h2>My Bridal Work</h2>
-            <div class="slider-container" onclick="nextSlide('bridalWrap', 18, 'bridal')">
+            <div class="slider-container" onclick="nextSlide('bridalWrap', 9, 'bridal')">
                 <div class="slider-wrapper" id="bridalWrap">
-                    <!-- Corrected spelling to 'fullpic' -->
+                    <!-- Only Bridal and Fullpics remain -->
                     <img src="facework1.jpeg"><img src="facework2.jpeg"><img src="facework3.jpeg">
-                    <img src="facework4mirrorphoto.jpeg"><img src="facework5mirrorphoto.jpeg">
-                    <img src="facework7.jpeg"><img src="facework8.jpeg"><img src="facework10.jpeg">
-                    <img src="facework11.jpeg"><img src="facework12traditional.jpeg">
-                    <img src="facework13traditional.jpeg"><img src="facework14.jpeg">
+                    <img src="facework12traditional.jpeg"><img src="facework13traditional.jpeg">
                     <img src="fullpic2.jpeg"><img src="fullpic3.jpeg"><img src="fullpic4.jpeg">
                     <img src="fullpic5.jpeg"><img src="fullpic6.jpeg"><img src="fullpick.jpeg">
                 </div>
@@ -68,6 +68,8 @@
             <p>📍 Dehradun, Uttarakhand<br>📞 +91 91934 96953</p>
             <a href="https://wa.me" class="btn">WhatsApp Booking</a>
         </div>
+
+        <p class="footer-credit">Created by Shivankar</p>
     </div>
 
     <script>
@@ -77,7 +79,7 @@
             document.getElementById(id).style.transform = `translateX(-${pos[key] * 100}%)`;
         }
         setInterval(() => nextSlide('eyeWrap', 7, 'eye'), 5000);
-        setInterval(() => nextSlide('bridalWrap', 18, 'bridal'), 4500);
+        setInterval(() => nextSlide('bridalWrap', 9, 'bridal'), 4500);
     </script>
 </body>
 </html>
