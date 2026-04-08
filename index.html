@@ -3,65 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neha Bhatt Artistry | Dehradun</title>
-    <!-- FIXED LINKS: These allow the fonts and slider to load properly -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="https://jsdelivr.net" />
-    <link rel="stylesheet" href="style.css">
+    <title>Neha Bhatt Artistry</title>
+    <style>
+        /* Design is included here so you don't need a separate CSS file */
+        body { 
+            background-color: #0f0f0f; 
+            color: #333; 
+            font-family: Arial, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            padding: 20px; 
+        }
+        .container { width: 100%; max-width: 500px; }
+        .logo { color: #c5a059; text-align: center; margin: 40px 0; letter-spacing: 3px; }
+        .card { 
+            background: white; 
+            border-radius: 10px; 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            text-align: center; 
+            border-left: 5px solid red; 
+        }
+        h2 { margin-bottom: 10px; color: #000; }
+        .btn { 
+            display: inline-block; 
+            background: #25D366; 
+            color: white; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            margin-top: 10px; 
+        }
+        .placeholder { 
+            height: 150px; 
+            background: #f0f0f0; 
+            border: 2px dashed #ccc; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #888; 
+        }
+    </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <header>
-            <h1 class="logo">NEHA BHATT</h1>
-        </header>
+    <div class="container">
+        <h1 class="logo">NEHA BHATT</h1>
 
-        <!-- ABOUT ME SECTION -->
-        <section class="card about-section">
+        <div class="card">
             <h2>About Me</h2>
-            <p>Certified Professional Makeup Artist trained at <strong>Orane International</strong>. With over 1 year of freelance experience, I specialize in creating stunning Bridal, Engagement, and Party looks.</p>
-        </section>
+            <p>Certified Professional Makeup Artist based in Dehradun. Specialized in Bridal and Party makeup.</p>
+        </div>
 
-        <!-- MY WORK SECTION (Smaller Images) -->
-        <section class="card gallery-section">
-            <h2 class="gallery-title">📸 My Work</h2>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <!-- Your exact image filenames -->
-                    <div class="swiper-slide"><img src="facework12traditional.jpeg"></div>
-                    <div class="swiper-slide"><img src="eyework1.jpeg"></div>
-                    <div class="swiper-slide"><img src="facework4mirrorphoto.jpeg"></div>
-                    <div class="swiper-slide"><img src="eyework2.jpeg"></div>
-                    <div class="swiper-slide"><img src="facework13traditional.jpeg"></div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
+        <div class="card">
+            <h2>My Work</h2>
+            <div class="placeholder">Photos Coming Soon</div>
+        </div>
 
-        <!-- ADDRESS & CONTACT SECTION -->
-        <section class="card contact-section">
-            <h2>Location & Contact</h2>
-            <p>📍 <strong>Address:</strong> Dehradun, Uttarakhand</p>
-            <p>📞 <strong>Phone:</strong> +91 91934 96953</p>
-            <a href="https://wa.me" class="wa-btn">Book on WhatsApp</a>
-        </section>
-
-        <!-- CERTIFICATION SECTION -->
-        <section class="card cert-section">
-            <h2>Certification</h2>
-            <img src="certificate.jpeg" alt="Certification" class="cert-img">
-        </section>
+        <div class="card">
+            <h2>Contact</h2>
+            <p>Dehradun, Uttarakhand</p>
+            <p>Phone: +91 91934 96953</p>
+            <a href="https://wa.me" class="btn">WhatsApp Me</a>
+        </div>
     </div>
 
-    <!-- FIXED SCRIPT: This runs the slider -->
-    <script src="https://jsdelivr.net"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            autoplay: { delay: 3000 },
-            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-        });
-    </script>
 </body>
 </html>
