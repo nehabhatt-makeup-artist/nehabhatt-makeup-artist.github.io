@@ -19,7 +19,9 @@
         .insta-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); margin-top: 10px; }
         .tip { font-size: 11px; color: #999; margin-top: 10px; }
         .cert-img { width: 100%; border-radius: 6px; margin-top: 10px; border: 1px solid #ddd; }
-        .footer-credit { text-align: center; color: #555; font-size: 12px; margin-top: 20px; letter-spacing: 1px; }
+        
+        /* Updated Footer Credit */
+        .footer-credit { text-align: center; color: #777; font-size: 12px; margin-top: 30px; letter-spacing: 1px; padding-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -27,7 +29,7 @@
     <div class="container">
         <h1 class="logo">NEHA BHATT</h1>
 
-        <!-- BIO SECTION -->
+        <!-- ABOUT SECTION -->
         <div class="card">
             <h2>About Me</h2>
             <p style="line-height: 1.8;">
@@ -38,38 +40,40 @@
             </p>
         </div>
 
-        <!-- SECTION: EYE WORK -->
+        <!-- 1. BRIDAL WORK SECTION -->
         <div class="card">
-            <h2>My Eye Work</h2>
-            <div class="slider-container" onclick="nextSlide('eyeWrap', 7, 'eye')">
-                <div class="slider-wrapper" id="eyeWrap">
-                    <img src="eyework1.jpeg"><img src="eyework2.jpeg"><img src="eyework3.jpeg">
-                    <img src="eyework4.jpeg"><img src="eyework5.jpeg"><img src="eyework6.jpeg"><img src="eyework7.jpeg">
-                </div>
-            </div>
-            <p class="tip">Tap photo to see next</p>
-        </div>
-
-        <!-- SECTION: BRIDAL WORK -->
-        <div class="card">
-            <h2>My Bridal Work</h2>
-            <div class="slider-container" onclick="nextSlide('bridalWrap', 3, 'bridal')">
+            <h2>Bridal Work</h2>
+            <div class="slider-container" onclick="nextSlide('bridalWrap', 12, 'bridal')">
                 <div class="slider-wrapper" id="bridalWrap">
                     <img src="facework1.jpeg"><img src="facework2.jpeg"><img src="facework3.jpeg">
+                    <img src="facework12traditional.jpeg"><img src="facework13traditional.jpeg">
+                    <img src="fullpic2.jpeg"><img src="fullpic3.jpeg"><img src="fullpic4.jpeg">
+                    <img src="fullpic5.jpeg"><img src="fullpic6.jpeg"><img src="fullpick.jpeg">
                 </div>
             </div>
             <p class="tip">Tap photo to see next</p>
         </div>
 
-        <!-- SECTION: PARTY WORK (Moved Photos) -->
+        <!-- 2. PARTY ARTISTRY SECTION -->
         <div class="card">
             <h2>Party Artistry</h2>
-            <div class="slider-container" onclick="nextSlide('partyWrap', 11, 'party')">
+            <div class="slider-container" onclick="nextSlide('partyWrap', 7, 'party')">
                 <div class="slider-wrapper" id="partyWrap">
                     <img src="facework10.jpeg"><img src="facework11.jpeg"><img src="facework14.jpeg">
-                    <img src="facework4mirrorphoto.jpeg"><img src="facework7.jpeg"><img src="facework8.jpeg">
-                    <img src="fullpic2.jpeg"><img src="fullpic3.jpeg"><img src="fullpic4.jpeg">
-                    <img src="fullpic5.jpeg"><img src="fullpic6.jpeg">
+                    <img src="facework4mirrorphoto.jpeg"><img src="facework5mirrorphoto.jpeg">
+                    <img src="facework7.jpeg"><img src="facework8.jpeg">
+                </div>
+            </div>
+            <p class="tip">Tap photo to see next</p>
+        </div>
+
+        <!-- 3. EYE ARTISTRY SECTION -->
+        <div class="card">
+            <h2>Eye Artistry</h2>
+            <div class="slider-container" onclick="nextSlide('eyeWrap', 7, 'eye')">
+                <div class="swiper-wrapper slider-wrapper" id="eyeWrap">
+                    <img src="eyework1.jpeg"><img src="eyework2.jpeg"><img src="eyework3.jpeg">
+                    <img src="eyework4.jpeg"><img src="eyework5.jpeg"><img src="eyework6.jpeg"><img src="eyework7.jpeg">
                 </div>
             </div>
             <p class="tip">Tap photo to see next</p>
@@ -81,26 +85,28 @@
             <img src="certificate.jpeg" class="cert-img">
         </div>
 
-        <!-- CONTACT & INSTAGRAM LINK -->
+        <!-- CONTACT SECTION -->
         <div class="card">
             <h2>Contact & Bookings</h2>
             <p>📍 Dehradun, Uttarakhand<br>📞 +91 91934 96953</p>
             <a href="https://wa.me" class="btn">WhatsApp Booking</a>
-            <a href="https://www.instagram.com/nehabhatt_____5?igsh=MWszYWdhOWs0em5uaw==" class="btn insta-btn">Follow on Instagram</a>
+            <a href="https://instagram.com" class="btn insta-btn">Follow on Instagram</a>
         </div>
 
-        <p class="footer-credit">Created by Shivankar</p>
+        <!-- UPDATED CREDIT -->
+        <p class="footer-credit">© 2026 Created by Shivankar Tiwari.</p>
     </div>
 
     <script>
-        let pos = { eye: 0, bridal: 0, party: 0 };
+        let pos = { bridal: 0, party: 0, eye: 0 };
         function nextSlide(id, total, key) {
             pos[key] = (pos[key] + 1) % total;
             document.getElementById(id).style.transform = `translateX(-${pos[key] * 100}%)`;
         }
+        // Auto-Slide Timers
+        setInterval(() => nextSlide('bridalWrap', 12, 'bridal'), 4000);
+        setInterval(() => nextSlide('partyWrap', 7, 'party'), 4500);
         setInterval(() => nextSlide('eyeWrap', 7, 'eye'), 5000);
-        setInterval(() => nextSlide('bridalWrap', 3, 'bridal'), 4000);
-        setInterval(() => nextSlide('partyWrap', 11, 'party'), 4500);
     </script>
 </body>
 </html>
