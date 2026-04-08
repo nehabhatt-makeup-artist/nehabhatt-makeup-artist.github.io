@@ -7,54 +7,38 @@
     <style>
         body { background-color: #0f0f0f; color: #333; font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 20px; }
         .container { width: 100%; max-width: 500px; }
-        .logo { color: #c5a059; text-align: center; margin: 40px 0; letter-spacing: 3px; font-size: 24px; }
-        .card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; text-align: center; border-left: 5px solid red; }
+        .logo { color: #c5a059; text-align: center; margin: 40px 0; letter-spacing: 3px; font-size: 24px; font-weight: bold; }
+        .card { background: white; border-radius: 15px; padding: 25px; margin-bottom: 25px; text-align: center; border-left: 5px solid red; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
         h2 { margin-bottom: 15px; color: #000; font-size: 18px; text-transform: uppercase; }
         
-        /* THE FIXED SLIDESHOW */
-        .slideshow-container {
+        /* THE FIXED TAP SLIDER */
+        .slider-container {
             width: 100%;
-            max-width: 300px; /* Makes the photo container smaller */
-            height: 250px;    /* Smaller height for professional look */
-            overflow: hidden; 
-            border-radius: 8px;
+            max-width: 320px; 
+            height: 250px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
             position: relative;
-            margin: 0 auto;   /* Centers the photo box */
+            cursor: pointer;
             border: 1px solid #ddd;
         }
 
         .slider-wrapper {
             display: flex;
-            width: 700%; /* Total images (7) */
-            animation: slide-fixed 20s infinite ease-in-out;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out; 
         }
 
         .slider-wrapper img {
-            width: 14.285%; /* 100 divided by 7 images = 14.285% each */
-            height: 250px;
-            object-fit: cover; /* Centers the focus of the photo */
+            min-width: 100%; 
+            height: 100%;
+            object-fit: cover;
         }
 
-        /* Fixed Math: Each step is exactly -14.28% */
-        @keyframes slide-fixed {
-            0%   { transform: translateX(0); }
-            12%  { transform: translateX(0); }
-            14%  { transform: translateX(-14.28%); }
-            26%  { transform: translateX(-14.28%); }
-            28%  { transform: translateX(-28.57%); }
-            40%  { transform: translateX(-28.57%); }
-            42%  { transform: translateX(-42.85%); }
-            54%  { transform: translateX(-42.85%); }
-            56%  { transform: translateX(-57.14%); }
-            68%  { transform: translateX(-57.14%); }
-            70%  { transform: translateX(-71.42%); }
-            82%  { transform: translateX(-71.42%); }
-            84%  { transform: translateX(-85.71%); }
-            98%  { transform: translateX(-85.71%); }
-            100% { transform: translateX(0); }
-        }
-
-        .btn { display: inline-block; background: #25D366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+        .btn { display: inline-block; background: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+        p.tip { font-size: 11px; color: #888; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -64,14 +48,14 @@
 
         <div class="card">
             <h2>About Me</h2>
-            <p>Certified Professional Makeup Artist based in Dehradun. Trained at Orane International.</p>
+            <p>Certified Professional Makeup Artist based in Dehradun. Specialized in Bridal and Party makeup.</p>
         </div>
 
+        <!-- UPDATED HEADING: MY EYE WORK -->
         <div class="card">
-            <h2>My Work</h2>
-            <div class="slideshow-container">
-                <div class="slider-wrapper">
-                    <!-- Images listed here -->
+            <h2>My Eye Work</h2>
+            <div class="slider-container" id="slider" onclick="nextSlide()">
+                <div class="slider-wrapper" id="wrapper">
                     <img src="eyework1.jpeg">
                     <img src="eyework2.jpeg">
                     <img src="eyework3.jpeg">
@@ -81,7 +65,7 @@
                     <img src="eyework7.jpeg">
                 </div>
             </div>
-            <p style="margin-top: 10px; font-size: 11px; color: #888;">Slide automatic • Tap to pause</p>
+            <p class="tip">Slides automatically • Tap photo to see next</p>
         </div>
 
         <div class="card">
@@ -92,5 +76,21 @@
         </div>
     </div>
 
+    <script>
+        let index = 0;
+        const wrapper = document.getElementById('wrapper');
+        const totalImages = 7;
+
+        function showSlide() {
+            wrapper.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextSlide() {
+            index = (index + 1) % totalImages;
+            showSlide();
+        }
+
+        setInterval(nextSlide, 4000);
+    </script>
 </body>
 </html>
