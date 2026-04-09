@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neha Bhatt Artistry</title>
+    
+    <!-- SEO & Search Results -->
+    <title>Neha Bhatt | Professional Makeup Artist in Dehradun</title>
+    <meta name="description" content="Certified professional makeup artist in Dehradun specializing in Bridal, Engagement, and Party makeup. Book your appointment with Neha Bhatt Artistry.">
+    <meta name="keywords" content="Makeup Artist Dehradun, Bridal Makeup Dehradun, Neha Bhatt, Wedding Makeup Uttarakhand">
+    
+    <!-- Social Media Preview Image -->
+    <meta property="og:image" content="https://nehabhatt-makeup-artist.github.io/certificate.jpeg">
+
     <style>
         body { background-color: #0a0a0a; color: #333; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
         .container { width: 100%; max-width: 450px; }
@@ -19,8 +27,6 @@
         .insta-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); margin-top: 10px; }
         .tip { font-size: 11px; color: #999; margin-top: 10px; }
         .cert-img { width: 100%; border-radius: 6px; margin-top: 10px; border: 1px solid #ddd; }
-        
-        /* Updated Footer Credit */
         .footer-credit { text-align: center; color: #777; font-size: 12px; margin-top: 30px; letter-spacing: 1px; padding-bottom: 20px; }
     </style>
 </head>
@@ -29,7 +35,6 @@
     <div class="container">
         <h1 class="logo">NEHA BHATT</h1>
 
-        <!-- ABOUT SECTION -->
         <div class="card">
             <h2>About Me</h2>
             <p style="line-height: 1.8;">
@@ -40,7 +45,6 @@
             </p>
         </div>
 
-        <!-- 1. BRIDAL WORK SECTION -->
         <div class="card">
             <h2>Bridal Work</h2>
             <div class="slider-container" onclick="nextSlide('bridalWrap', 12, 'bridal')">
@@ -54,7 +58,6 @@
             <p class="tip">Tap photo to see next</p>
         </div>
 
-        <!-- 2. PARTY ARTISTRY SECTION -->
         <div class="card">
             <h2>Party Artistry</h2>
             <div class="slider-container" onclick="nextSlide('partyWrap', 7, 'party')">
@@ -67,11 +70,10 @@
             <p class="tip">Tap photo to see next</p>
         </div>
 
-        <!-- 3. EYE ARTISTRY SECTION -->
         <div class="card">
             <h2>Eye Artistry</h2>
             <div class="slider-container" onclick="nextSlide('eyeWrap', 7, 'eye')">
-                <div class="swiper-wrapper slider-wrapper" id="eyeWrap">
+                <div class="slider-wrapper" id="eyeWrap">
                     <img src="eyework1.jpeg"><img src="eyework2.jpeg"><img src="eyework3.jpeg">
                     <img src="eyework4.jpeg"><img src="eyework5.jpeg"><img src="eyework6.jpeg"><img src="eyework7.jpeg">
                 </div>
@@ -79,13 +81,11 @@
             <p class="tip">Tap photo to see next</p>
         </div>
 
-        <!-- CERTIFICATION SECTION -->
         <div class="card">
             <h2>Certification</h2>
             <img src="certificate.jpeg" class="cert-img">
         </div>
 
-        <!-- CONTACT SECTION -->
         <div class="card">
             <h2>Contact & Bookings</h2>
             <p>📍 Dehradun, Uttarakhand<br>📞 +91 91934 96953</p>
@@ -93,7 +93,6 @@
             <a href="https://www.instagram.com/nehabhatt_____5?igsh=MWszYWdhOWs0em5uaw==" class="btn insta-btn">Follow on Instagram</a>
         </div>
 
-        <!-- UPDATED CREDIT -->
         <p class="footer-credit">© 2026 Created by Shivankar Tiwari.</p>
     </div>
 
@@ -103,7 +102,6 @@
             pos[key] = (pos[key] + 1) % total;
             document.getElementById(id).style.transform = `translateX(-${pos[key] * 100}%)`;
         }
-        // Auto-Slide Timers
         setInterval(() => nextSlide('bridalWrap', 11, 'bridal'), 4000);
         setInterval(() => nextSlide('partyWrap', 7, 'party'), 4500);
         setInterval(() => nextSlide('eyeWrap', 7, 'eye'), 5000);
