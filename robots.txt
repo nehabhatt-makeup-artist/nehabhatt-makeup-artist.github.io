@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nehabhatt-makeup-artist.github.io/sitemap.xml
